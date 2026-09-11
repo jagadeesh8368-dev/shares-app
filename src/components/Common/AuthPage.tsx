@@ -176,8 +176,8 @@ export default function AuthPage({ onMockLogin }: AuthPageProps) {
         </button>
 
         {/* Disclaimer */}
-        <div className="mt-8 flex items-center justify-center gap-1.5 text-xs font-semibold text-amber-500">
-          <span className="text-sm">⚠️</span> For educational purposes only. Not financial advice. All data is simulated/mock.
+        <div className="mt-8 flex items-center justify-center gap-1.5 text-xs font-semibold text-slate-500">
+          <span className="text-sm">ℹ️</span> Data provided for informational purposes only. Information may be delayed.
         </div>
       </div>
     </main>
