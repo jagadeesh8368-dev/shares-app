@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Stocks data (Read-only for everyone, write only by admins in the future)
+    match /stocks/{symbol} {
+      allow read: if true;
+      allow write: if false; // Change to admin later
+    }
+
+    match /stockDetails/{symbol} {
+      allow read: if true;
+      allow write: if false; // Change to admin later
+    }
+
+    match /news/{newsId} {
+      allow read: if true;
+      allow write: if false; // Change to admin later
+    }
+    
+    match /indices/{indexId} {
+      allow read: if true;
+      allow write: if false; // Change to admin later
+    }
+
+    // User-specific data (Read/Write only by the authenticated user)
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      match /watchlists/{document=**} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+  }
+}
