@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# shares-app
 
 ## Local demo mode
 

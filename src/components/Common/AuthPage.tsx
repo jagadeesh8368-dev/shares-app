@@ -105,13 +105,7 @@ export default function AuthPage({ onMockLogin }: AuthPageProps) {
           </div>
         </div>
 
-        {/* Firebase Warning */}
-        {!isFirebaseConfigured && (
-          <div className="mb-6 flex w-full gap-3 rounded-2xl border border-amber-400/50 bg-amber-50 p-4 text-sm text-amber-800">
-            <AlertCircle className="h-5 w-5 shrink-0 text-amber-600" />
-            <span>Firebase is not configured yet. Add the Firebase values to your `.env` file.</span>
-          </div>
-        )}
+
 
         {/* Error Message */}
         {error && (
